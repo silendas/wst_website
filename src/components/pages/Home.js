@@ -19,7 +19,7 @@ const Home = () => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -35,7 +35,7 @@ const Home = () => {
     <div className="container mx-auto px-4 py-8">
       {/* Section 1: Carousel */}
       <section className="mb-12">
-        <div className="relative h-96 overflow-hidden">
+        <div className="relative h-144 overflow-hidden">
           {images.map((image, index) => (
             <img
               key={index}
