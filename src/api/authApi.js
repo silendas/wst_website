@@ -20,3 +20,12 @@ export const logout = async () => {
     return handleError(error);
   }
 };
+
+export const register = async (data) => {
+  try {
+    const response = await axiosInstance.post(`${baseUrl}register`, data);
+    return handleResponse(response);
+  } catch (error) {
+    return handleError(error);
+  }
+};
